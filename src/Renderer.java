@@ -19,8 +19,11 @@ public class Renderer {
             Vertex v2 = transform.transform(triangle.v2);
             Vertex v3 = transform.transform(triangle.v3);
 
+            // Get edge vectors v1 to v2 and v1 to v3
             Vertex ab = new Vertex(v2.x - v1.x, v2.y - v1.y, v2.z - v1.z, v2.w - v1.w);
             Vertex ac = new Vertex(v3.x - v1.x, v3.y - v1.y, v3.z - v1.z, v3.w - v1.w);
+
+            // Get cross product
             Vertex norm = new Vertex(
                     ab.y * ac.z - ab.z * ac.y,
                     ab.z * ac.x - ab.x * ac.z,
@@ -41,12 +44,12 @@ public class Renderer {
             v3.x = v3.x / (-v3.z) * fov;
             v3.y = v3.y / (-v3.z) * fov;
 
-            v1.x += width / 2;
-            v1.y += height / 2;
-            v2.x += width / 2;
-            v2.y += height / 2;
-            v3.x += width / 2;
-            v3.y += height / 2;
+            v1.x += (double) width / 2;
+            v1.y += (double) height / 2;
+            v2.x += (double) width / 2;
+            v2.y += (double) height / 2;
+            v3.x += (double) width / 2;
+            v3.y += (double) height / 2;
 
 
             //Bounding Box calculations
