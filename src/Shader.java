@@ -2,7 +2,7 @@ import java.awt.*;
 
 public class Shader {
     public static double getShade(double angleCos) {
-        return Math.pow(angleCos, 1.5);
+        return Math.pow(angleCos, 2.0);
     }
 
     public static Color shadeColor(Color color, double shade) {
